@@ -78,22 +78,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="258"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBG-wN-ZKO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBG-wN-ZKO">
                                                     <rect key="frame" x="18" y="0.0" width="64" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.16078431369999999" green="0.6705882353" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-EM-zN7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-EM-zN7">
                                                     <rect key="frame" x="18" y="24" width="283" height="185"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="185" id="UV3-qm-vDA"/>
+                                                        <constraint firstAttribute="width" constant="283" id="yAs-it-h2v"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFk-ru-ONz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFk-ru-ONz">
                                                     <rect key="frame" x="18" y="220" width="283" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WFk-ru-ONz" firstAttribute="leading" secondItem="MBG-wN-ZKO" secondAttribute="leading" id="5X8-yn-F3Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="WFk-ru-ONz" secondAttribute="bottom" constant="21" id="BQa-0u-Grq"/>
+                                                <constraint firstItem="UUs-EM-zN7" firstAttribute="top" secondItem="MBG-wN-ZKO" secondAttribute="bottom" constant="7" id="J5V-Ke-Ju5"/>
+                                                <constraint firstItem="MBG-wN-ZKO" firstAttribute="leading" secondItem="MR4-Hh-NJO" secondAttribute="leading" constant="18" id="O7y-aJ-teS"/>
+                                                <constraint firstItem="MBG-wN-ZKO" firstAttribute="top" secondItem="MR4-Hh-NJO" secondAttribute="top" id="Qum-as-FZL"/>
+                                                <constraint firstItem="UUs-EM-zN7" firstAttribute="leading" secondItem="MBG-wN-ZKO" secondAttribute="leading" id="SDr-NV-qm7"/>
+                                                <constraint firstItem="WFk-ru-ONz" firstAttribute="top" secondItem="UUs-EM-zN7" secondAttribute="bottom" constant="11" id="WYu-St-ZVL"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="WFk-ru-ONz" id="vvP-64-5s5"/>
@@ -143,7 +156,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-eW-n59">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-eW-n59">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="134"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -161,7 +174,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-yC-lhe">
                                 <rect key="frame" x="20" y="311" width="280" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Post it!!"/>
                                 <connections>
                                     <action selector="onUploading:" destination="80e-mm-Umb" eventType="touchUpInside" id="3gP-XW-2ag"/>
                                 </connections>
@@ -188,7 +201,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="9fO-7Y-41l">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uda-KC-mAk" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Uda-KC-mAk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="OQW-02-ywB">
                         <autoresizingMask key="autoresizingMask"/>

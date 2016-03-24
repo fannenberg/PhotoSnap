@@ -55,13 +55,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getQuery() {
         // construct query
         let query = PFQuery(className: "Post")
-        query.whereKey("likesCount", greaterThan: 100)
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
         query.limit = 20
         
         // fetch data asynchronously
-        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
-            if let posts = posts {
-                self.posts = posts
+        query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) -> Void in
+            if let media = media {
+                self.posts = media
                 self.tableView.reloadData()
             } else {
                 print(error?.localizedDescription)

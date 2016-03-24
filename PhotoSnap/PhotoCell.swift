@@ -23,7 +23,7 @@ class PhotoCell: UITableViewCell {
             let file = post["media"] as? PFFile
             let url = NSURL(string: (file?.url)!)
             picturePost.setImageWithURL(url!)
-            usernameLabel.text = "\(PFUser.currentUser()!)"
+            usernameLabel.text = PFUser.currentUser()?.username
             
             picturePost.layer.cornerRadius = 4
             picturePost.clipsToBounds = true
