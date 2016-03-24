@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
             )
         
-        PFUser.logOut()
-        
         if PFUser.currentUser() != nil {
             // if there is a logged in user then load the home view controller
             print("yay! there is a user")
